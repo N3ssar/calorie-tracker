@@ -1,0 +1,125 @@
+/* RecordList Section Styles */
+.record-list {
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: var(--radius-xl);
+    background: var(--clr-bg-card-grad);
+    box-shadow: var(--shadow-card);
+    color: var(--clr-text-main);
+}
+
+.record-list--empty {
+    padding: 3rem 1rem;
+    text-align: center;
+    color: var(--clr-text-muted);
+    border: 1px dashed var(--clr-border);
+    border-radius: var(--radius-md);
+}
+
+.record-list p {
+    margin: .5rem auto;
+    font-size: 0.95rem;
+    color: var(--clr-text-muted);
+    text-align: center;
+}
+
+.record-list p:last-child {
+    text-align: left;
+    margin-top: 1.5rem auto;
+}
+
+/* Date Picker Area */
+.date-picker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--clr-border);
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.date-picker label {
+    font-weight: 600;
+    color: var(--clr-text-muted);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.date-picker input {
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius-md);
+    background-color: var(--clr-bg-input);
+    color: var(--clr-text-main);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.date-picker input:focus {
+    border-color: var(--clr-primary);
+    box-shadow: var(--focus-ring);
+}
+
+.date-picker input[type="date"] {
+    color-scheme: dark;
+}
+
+/* --- Header Columns --- */
+.record-list-header {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--clr-text-muted);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--clr-border);
+}
+
+
+.record-list-header .header-date {
+    flex: 0 0 80px;
+    text-align: center;
+}
+
+.record-list-header .header-meal {
+    flex: 0 0 25%;
+    padding-left: 1rem;
+    text-align: left;
+}
+
+.record-list-header .header-food {
+    flex: 1;
+    padding-left: 1rem;
+    text-align: left;
+}
+
+.record-list-header .header-calories {
+    flex: 0 0 100px;
+    text-align: right;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .record-list {
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+
+    .date-picker {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .record-list-header {
+        display: none;
+    }
+}

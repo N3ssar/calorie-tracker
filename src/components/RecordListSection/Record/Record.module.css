@@ -1,0 +1,110 @@
+/* Container for a single record row */
+.record {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    background-color: var(--clr-bg-item);
+    border-radius: var(--radius-md);
+    transition: transform 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.record:hover {
+    transform: translateY(-2px);
+    border-color: var(--clr-border);
+    background-color: rgba(31, 41, 55, 0.8);
+}
+
+
+.record-cell {
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+    color: var(--clr-text-main);
+    box-sizing: border-box;
+}
+
+
+.record-cell--date {
+    flex: 0 0 80px;
+    justify-content: center;
+}
+
+.record-cell--meal {
+    flex: 0 0 25%;
+    /* Matches Header */
+    padding-left: 1rem;
+    color: var(--clr-primary);
+    font-weight: 500;
+    justify-content: flex-start;
+}
+
+.record-cell--food {
+    flex: 1;
+    /* Matches Header */
+    padding-left: 1rem;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.record-cell--calories {
+    flex: 0 0 100px;
+    /* Matches Header */
+    justify-content: flex-end;
+    font-weight: 700;
+}
+
+/* Mobile Layout */
+@media (max-width: 600px) {
+    .record {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1.25rem;
+        gap: 0.75rem;
+        background-color: #1a2332;
+        border: 1px solid var(--clr-border);
+    }
+
+    .record-cell {
+        flex: unset;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        text-align: right;
+    }
+
+    .record-cell::before {
+        content: attr(data-label);
+        display: block;
+        text-align: left;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--clr-text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* Adjust alignments for mobile view */
+    .record-cell--date {
+        justify-content: space-between;
+    }
+
+    .record-cell--meal {
+        justify-content: space-between;
+        padding-left: 0;
+    }
+
+    .record-cell--food {
+        justify-content: space-between;
+        padding-left: 0;
+    }
+
+    .record-cell--calories {
+        justify-content: space-between;
+        color: var(--clr-text-main);
+        font-size: 1.1rem;
+    }
+}

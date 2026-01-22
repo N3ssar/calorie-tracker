@@ -1,0 +1,12 @@
+.styled-record-cell {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius-sm);
+    line-height: 1.4;
+}
+
+/* Contextual styling wrapper */
+.record-cell--calories .styled-record-cell {
+    color: inherit;
+    /* You can add a subtle background here if desired */
+}
